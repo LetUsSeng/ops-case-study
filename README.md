@@ -33,4 +33,24 @@ In that directory run the following commands which initializes the local terrafo
 
 `terraform init `
 
-Now that the terraform environment is initialized you will need to setup the terraform variables.tf to point at your aws environment.
+Now that the terraform environment is initialized you will need to setup the terraform `variables.tf` to point at your aws environment.
+
+You will replace each `default` variable with a value that is relevant to your environment:
+
+for example:
+
+```
+variable "aws_access_key" { 
+  description = "(Required) The AWS Access key to use with the AWS account"
+  default     = "ASFASDAFASDFASDAFASF"
+}
+```
+
+Once the variables are set you can run
+`terraform plan`
+which shows you the actions and resources that terraform will take and create.
+
+If there are no errors then run 
+`terraform apply`
+to execute the terraform build process.
+
