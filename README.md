@@ -1,8 +1,10 @@
 # Technical Assessment 
 
 ## Summary
-The purpose of this project is to gauge your technical ability and your ability to follow instructions by providing a working example of terraform code. At MedNet Solutions, we use terraform predominantly for the development and management of our Production and Non-production environments in both AWS and on-premise vSphere. Half of our working day is spent writing or evaluating scripts and code of many different languages and working within a linux (Centos) command line. We are aware that not all candidates know all available scripting languages, however, a good candidates should have proficiency in at least one language, and a solid understanding of coding paradigms, procedures, syntaxes, and general semantics in order to excel and be proficient in this position. A good candidate will also be comfortable with working within a linux command line in order to manage, configure, and maintain active systems.
+The purpose of this project is to gauge your technical ability and your ability to follow instructions by providing a working example of terraform code. At MedNet Solutions, we use terraform predominantly for the development and management of our Production and Non-production environments in both AWS and on-premise vSphere. More than half of our working day is spent writing or evaluating scripts and code of many different languages as well as working within a linux (Centos) command line to configure, manage, and maintain our active systems. We are aware that not all candidates know all available scripting languages, however, a good candidate should have proficiency in at least one scripting language as well as have a solid understanding of coding paradigms, procedures, syntaxes, and general semantics in order to excel and be proficient in this position. A good candidate will also be comfortable with working within a linux command line.
 
+
+## The Goal
 
 The goal of this technical assessment is for you to do the following:
 
