@@ -1,6 +1,8 @@
 # Technical Assessment 
 
-The purpose of this project is to gauge your technical ability and your ability to follow instructions by providing a working example of terraform code. At MedNet Solutions, we use terraform predominantly for the development and management of our Production and Non-production environments in AWS and vSphere
+## Summary
+The purpose of this project is to gauge your technical ability and your ability to follow instructions by providing a working example of terraform code. At MedNet Solutions, we use terraform predominantly for the development and management of our Production and Non-production environments in AWS and vSphere. Half of our working day is spent writing or evaluating scripts and code of many different langauges. We are aware that not everyone knows all scripting langauges or may have limited knowledege of scripting, but a good candidate will be able to learn quickly 
+
 
 The goal of this technical assessment is for you to do the following:
 
@@ -16,13 +18,16 @@ The goal of this technical assessment is for you to do the following:
 
 Bonus points:
 
- - ?
- - ?
+ - Convert the terraform script to build multiple instances of the same time utilizing the same `aws_instance` resource provided.
+ - TODO
 
+
+## Installation and Procedures
 `https://www.terraform.io/`
 
 To install terraform follow this guide:
-https://learn.hashicorp.com/terraform/getting-started/install.html
+
+`https://learn.hashicorp.com/terraform/getting-started/install.html`
 
 You can verify terraform is working locally by running:
 
@@ -37,7 +42,7 @@ Now that the terraform environment is initialized you will need to setup the ter
 
 You will replace each `default` variable with a value that is relevant to your environment:
 
-for example:
+######For Example:
 
 ```
 variable "aws_access_key" { 
@@ -53,4 +58,9 @@ which shows you the actions and resources that terraform will take and create.
 If there are no errors then run 
 `terraform apply`
 to execute the terraform build process.
+
+If there are errors then read and debug until a successful `terraform apply` is completed.  As long as all the variables are configured properly, the code will work `as is`.
+
+##Expected outcome and Submitting Results
+Todo
 
