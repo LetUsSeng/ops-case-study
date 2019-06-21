@@ -16,12 +16,13 @@ The goal of this technical assessment is for you to do the following:
 
 4.) Write bash code in the provisioning script provided to install necessary software and packages to turn this instance into a running apache webserver upon boot.
 
-*You may modify any parts of the code provided to your liking.*
+######*You may modify any parts of the code provided to your liking.*
 
-Bonus points:
+####Bonus points:
 
  - Convert the terraform script to build multiple instances of the same time utilizing the same `aws_instance` resource provided.
- - TODO
+ - Write unit tests to prove that your code works as expected.
+ - TBD
 
 
 ## Installation and Procedures
