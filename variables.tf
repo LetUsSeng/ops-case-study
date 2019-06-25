@@ -1,13 +1,16 @@
 # AWS specific vars
 variable "aws_access_key" { 
   description = "(Required) The AWS Access key to use with the AWS account"
-  default     = "replace_with_value"
 }
 
 variable "aws_secret_key" { 
   description = "(Required) The AWS Access key to use with the AWS account"
-  default     = "replace_with_value"
+}
 
+# All AWS accounts are provisioned with atleast one "default" VPC
+variable "vpc_id" {
+  description = "Supply the ID of the VPC to deploy to"
+  default = "replace_with_value"
 }
 
 variable "aws_region" {
@@ -23,7 +26,6 @@ variable "ssh_public_key" {
 
 variable "ssh_private_key_path" {
   description = "(Required) Path to the private key of the public key defined above."
-  default     = "replace_with_value"
 }
 
 variable "aws_ami" {
