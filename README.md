@@ -1,29 +1,45 @@
 # Technical Assessment 
 
 ## Summary
-The purpose of this project is to gauge your technical ability and your ability to follow instructions by providing a working example of terraform code. At MedNet Solutions, we use terraform predominantly for the development and management of our Production and Non-production environments in both AWS and on-premise vSphere. More than half of our working day is spent writing or evaluating scripts and code of many different languages as well as working within a linux (Centos) command line to configure, manage, and maintain our active systems. We are aware that not all candidates know all available scripting languages, however, a good candidate should have proficiency in at least one scripting language as well as have a solid understanding of coding paradigms, procedures, syntaxes, and general semantics in order to excel and be proficient in this position. A good candidate will also be comfortable with working within a linux command line.
+The purpose of this project is to gauge your technical ability by providing a sample project that uses Terraform code.
+At MedNet Solutions, we use Terraform to develop and manage our Production and Non-production environments in AWS and vSphere.
+We are code-centric, and are always writing or evaluating scripts in bash, python, Ansible, Ruby etc.
+While we are aware that not everyone  may know every scripting langauge, this role requires the ability to learn effective scripting.
+A Cloud Infrastructure Engineer is required to develop a solid understanding of coding paradigms, procedures, syntaxes, and general semantics 
+and be comfortable with working within the Linux command line.
 
 
-## The Goal
+This technical assessment requires you to:
 
-The goal of this technical assessment is for you to do the following:
+1) Setup the terraform software on your local machine.
 
-1.) Setup the terraform software on your local machine.
+2) Configure the terraform variables.tf to point at your AWS account. Note that you can create a free AWS account: https://aws.amazon.com/free/
 
-2.) Configure the terraform variables.tf to point at your AWS account
+3) Run the terraform code and bring up a running Centos 7 instance in the specified AWS account.
 
-3.) Run the terraform code and bring up a running Centos 7 instance in the specified AWS account.
+4) Write bash code in the provisioning script provided to convert this instance into a functioning Apache webserver on boot.
 
-4.) Write bash code in the provisioning script provided to install necessary software and packages to turn this instance into a running apache webserver upon boot.
+5) Deploy and serve up a simple PHP script via the Apache server.
 
-######*You may modify any parts of the code provided to your liking.*
+### Sample PHP Script
+```php
+<html>
+ <head>
+  <title>Hello World</title>
+ </head>
+ <body>
+ <p>Hello World from: <?php echo file_get_contents('http://169.254.169.254/latest/meta-data/public-ipv4'); ?> </p> 
+ </body>
+</html>
+```
+6) Write a simple test to demonstrate that your Apache webserver instance works as expected
+
+_You may modify any parts of the code provided to your liking._
 
 ####Bonus points:
 
  - Convert the terraform script to build multiple instances of the same time utilizing the same `aws_instance` resource provided.
- - Write unit tests to prove that your code works as expected.
- - TBD
-
+ - **Advanced**: Run the instances behind a load balancer provisioned via Terraform
 
 ## Installation and Procedures
 `https://www.terraform.io/`
@@ -62,8 +78,9 @@ If there are no errors then run
 `terraform apply`
 to execute the terraform build process.
 
-If there are errors then read and debug until a successful `terraform apply` is completed.  As long as all the variables are configured properly, the code will work `as is`.
+If there are errors then read and debug until a successful `terraform apply` is completed. 
+Note that this script requires a small amount of debugging/fixing to get it to work.
 
 ##Expected outcome and Submitting Results
-Todo
-
+* Commit your code (with fixes) to Github or other repository for viewing
+* Be prepared to demo a `terraform destroy`, `terraform plan` and `terraform apply`

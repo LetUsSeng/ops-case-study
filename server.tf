@@ -10,13 +10,11 @@ resource "aws_key_pair" "instance_key" {
   public_key = "${var.ssh_public_key}"
 }
 
-# Creates a default VPC if one does not already exist in the account
-# if one already exists in the account it uses that one instead
-resource "aws_default_vpc" "default" {
-  tags = {
-    Name = "Default VPC"
-  }
+# Lookup VPC ID where instance will be launched
+data "aws_vpc" "vpc" {
+  id = "${var.vpc_id}"
 }
+
 
 # Instance specific configuration
 resource "aws_instance" "webserver" {
@@ -59,7 +57,7 @@ resource "aws_instance" "webserver" {
 # and it allows for all out bound traffic, this is applied to the instance above.
 resource "aws_security_group" "allow_all" {
   name = "allow-all-sg"
-  vpc_id = "${aws_default_vpc.default.id}"
+  vpc_id = "${data.aws_vpc.vpc.id}"
   
   # ssh ports
   ingress {
