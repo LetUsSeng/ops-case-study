@@ -36,7 +36,7 @@ This technical assessment requires you to:
 
 _You may modify any parts of the code provided to your liking._
 
-###Bonus points:
+### Bonus points:
 
  - Convert the terraform script to build multiple instances of the same time utilizing the same `aws_instance` resource provided.
  - **Advanced**: Run the instances behind a load balancer provisioned via Terraform
@@ -61,7 +61,7 @@ Now that the terraform environment is initialized you will need to setup the ter
 
 You will replace each `default` variable with a value that is relevant to your environment:
 
-######For Example:
+#### For Example:
 
 ```
 variable "aws_access_key" { 
@@ -81,6 +81,6 @@ to execute the terraform build process.
 If there are errors then read and debug until a successful `terraform apply` is completed. 
 Note that this script requires a small amount of debugging/fixing to get it to work.
 
-##Expected outcome and Submitting Results
+## Expected outcome and Submitting Results
 * Commit your code (with fixes) to Github or other repository for viewing
 * Be prepared to demo a `terraform destroy`, `terraform plan` and `terraform apply`
