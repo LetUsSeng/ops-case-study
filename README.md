@@ -38,7 +38,7 @@ _You may modify any parts of the code provided to your liking._
 
 ### Bonus points:
 
- - Convert the terraform script to build multiple instances of the same time utilizing the same `aws_instance` resource provided.
+ - Convert the terraform script to build multiple instances of the same type utilizing the same `aws_instance` resource provided.
  - **Advanced**: Run the instances behind a load balancer provisioned via Terraform
 
 ## Installation and Procedures
