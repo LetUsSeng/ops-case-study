@@ -15,6 +15,9 @@ data "aws_vpc" "vpc" {
   id = "${var.vpc_id}"
 }
 
+data "aws_subnet_ids" "public_subnet_ids" {
+  vpc_id = "${var.vpc_id}"
+}
 
 # Instance specific configuration
 resource "aws_instance" "webserver" {
@@ -22,9 +25,10 @@ resource "aws_instance" "webserver" {
  instance_type          = "${var.ec2_instance_type}"
  key_name               = "${aws_key_pair.instance_key.key_name}"
  vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
+ count                  = "${var.number_of_instances}"
 
- tags {
-   Name       = "Centos 7 Webserver"
+ tags = {
+   Name       = "Centos 7 Webserver ${count.index}"
    managed_by = "Terraform"
  }
  
@@ -33,9 +37,10 @@ resource "aws_instance" "webserver" {
    destination = "/tmp/provisioner.sh"
    
    connection {
+     host        = "${self.public_ip}"
      type        = "ssh"
      user        = "centos"
-     private_key = "${file("${var.ssh_private_key_path}")}"
+     private_key = "${file(var.ssh_private_key_path)}"
    }
  }
   
@@ -46,9 +51,10 @@ resource "aws_instance" "webserver" {
    ]
    
    connection {
+     host        = "${self.public_ip}"
      type        = "ssh"
      user        = "centos"
-     private_key = "${file("${var.ssh_private_key_path}")}"
+     private_key = "${file(var.ssh_private_key_path)}"
    }
  }
 }
