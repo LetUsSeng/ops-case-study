@@ -26,6 +26,7 @@ resource "aws_instance" "webserver" {
  key_name               = "${aws_key_pair.instance_key.key_name}"
  vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
  count                  = "${var.number_of_instances}"
+ subnet_id              = "${element(data.aws_subnet_ids.public_subnet_ids.ids[*], count.index % length(data.aws_subnet_ids.public_subnet_ids.ids))}"
 
  tags = {
    Name       = "Centos 7 Webserver ${count.index}"
